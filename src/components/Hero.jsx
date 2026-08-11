@@ -95,7 +95,7 @@ export default function Hero() {
 
     // Robotic Text Sequence
     if (textContainerRef.current) {
-        // LEESHARK chars glitch/stagger in
+        // KONA VENKATA SAI LAKSHMI chars glitch/stagger in
         bootTl.to('.title-char', { opacity: 1, x: 0, duration: 0.05, stagger: 0.05, ease: "none" }, 1.5);
         
         // Full Stack Developer
@@ -150,7 +150,7 @@ export default function Hero() {
     };
   }, [loaded]);
 
-  const titleText = "LEESH ARK";
+  const titleText = "KONA VENKATA SAI LAKSHMI";
 
   return (
     <div ref={containerRef} className="relative w-full h-screen bg-[#020202] overflow-hidden flex items-center justify-center font-sans tracking-wide">
@@ -177,11 +177,11 @@ export default function Hero() {
         <div className="portfolio-ui absolute top-28 left-8 md:top-32 md:left-12 z-[60] font-mono text-[10px] text-blue-400 tracking-widest flex flex-col space-y-1.5 pointer-events-none">
             <span className="hud-element opacity-0">&gt; SYSTEM ONLINE</span>
             <span className="hud-element opacity-0">&gt; INITIALIZING PORTFOLIO v2.0</span>
-            <span className="hud-element opacity-0">&gt; NEURAL LINK ESTABLISHED</span>
+            {/* <span className="hud-element opacity-0">&gt; NEURAL LINK ESTABLISHED</span> */}
         </div>
         <div className="portfolio-ui absolute bottom-12 right-8 md:bottom-12 md:right-12 z-[60] font-mono text-[10px] text-gray-600 tracking-widest text-right flex flex-col space-y-1.5 pointer-events-none">
-            <span className="hud-element opacity-0">SECURE SYS_ID: REACT_GSAP</span>
-            <span className="hud-element opacity-0">COORD: 34.0522 N / 118.2437 W</span>
+            <span className="hud-element opacity-0"></span>
+            <span className="hud-element opacity-0"></span>
         </div>
 
         {/* --- SOCIAL LINKS --- */}
@@ -247,7 +247,7 @@ export default function Hero() {
                                 className="mb-8"
                             >
                                 <p className="text-gray-400 text-sm md:text-sm lg:text-base font-light tracking-wide leading-relaxed">
-                                    Crafting modern, scalable and high-performance web applications with precision engineering and seamless user experience.
+                                    Engineering scalable cloud-native applications, distributed systems, and data platforms for modern enterprise technology.
                                 </p>
                             </motion.div>
                         )}

@@ -4,7 +4,7 @@ import { FiSun, FiMoon, FiMenu, FiX } from 'react-icons/fi';
 const navLinks = [
   { name: 'Home', href: '#' },
   { name: 'About', href: '#about' },
-  { name: 'Services', href: '#services' },
+  { name: 'Experience', href: '#services' },
   { name: 'Portfolio', href: '#portfolio' },
   { name: 'Contact', href: '#contact' }
 ];
@@ -23,6 +23,55 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Track which section is currently in view and sync activeLink to it
+  useEffect(() => {
+    const sectionEntries = navLinks
+      .filter((link) => link.href !== '#') // Home has no matching section element
+      .map((link) => ({
+        name: link.name,
+        el: document.querySelector(link.href),
+      }))
+      .filter((entry) => entry.el); // drop any that don't exist in the DOM
+
+    if (sectionEntries.length === 0) {
+      console.warn(
+        'Navbar scrollspy: no matching section elements found. ' +
+        'Make sure your sections have ids like id="about", id="services", etc.'
+      );
+      return;
+    }
+
+    const NAV_OFFSET = 120; // roughly navbar height + buffer, in px
+
+    const handleActiveSection = () => {
+      const scrollPos = window.scrollY + NAV_OFFSET;
+
+      // Before the first section, stay on Home
+      if (scrollPos < sectionEntries[0].el.offsetTop) {
+        setActiveLink('Home');
+        return;
+      }
+
+      // Find the last section whose top has been scrolled past
+      let current = sectionEntries[0];
+      for (const entry of sectionEntries) {
+        if (entry.el.offsetTop <= scrollPos) {
+          current = entry;
+        }
+      }
+      setActiveLink(current.name);
+    };
+
+    handleActiveSection(); // set correct state on initial load
+    window.addEventListener('scroll', handleActiveSection);
+    window.addEventListener('resize', handleActiveSection);
+
+    return () => {
+      window.removeEventListener('scroll', handleActiveSection);
+      window.removeEventListener('resize', handleActiveSection);
+    };
+  }, []);
+
   return (
     <>
       <nav
@@ -38,7 +87,7 @@ export default function Navbar() {
           <div className="flex items-center space-x-4 group cursor-pointer" onClick={() => (window.location.href = '#')}>
             <div className="flex flex-col">
                 <span className="text-white text-xl font-black tracking-[0.2em] uppercase leading-none">
-                    LEESHARK<span className="text-blue-500 animate-pulse ml-0.5">.</span>
+                    KONA VENKATA SAI LAKSHMI<span className="text-blue-500 animate-pulse ml-0.5">.</span>
                 </span>
                 <span className="text-[8px] font-mono text-blue-400 mt-1 opacity-60 tracking-[0.3em] uppercase">SYSTEM ONLINE</span>
             </div>
@@ -71,17 +120,17 @@ export default function Navbar() {
             {/* Action Group */}
             <div className="flex items-center space-x-6 border-l border-white/10 pl-10 h-6">
                 {/* Theme Toggle */}
-                <button 
+                {/* <button 
                   onClick={() => setIsDarkMode(!isDarkMode)}
                   className="text-white/40 hover:text-white hover:scale-110 active:scale-95 transition-all duration-300 group"
                 >
                   {isDarkMode ? <FiSun size={14} className="group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]" /> : <FiMoon size={14} />}
-                </button>
+                </button> */}
 
                 {/* Hire Me Button */}
-                <button className="px-5 py-1.5 border border-white/20 text-white font-mono text-[9px] uppercase tracking-[0.3em] hover:bg-white hover:text-black transition-all duration-500 rounded-sm">
+                {/* <button className="px-5 py-1.5 border border-white/20 text-white font-mono text-[9px] uppercase tracking-[0.3em] hover:bg-white hover:text-black transition-all duration-500 rounded-sm">
                     Hire Me
-                </button>
+                </button> */}
             </div>
           </div>
 

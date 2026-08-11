@@ -2,25 +2,123 @@ import React from "react";
 import { FiGithub, FiExternalLink } from "react-icons/fi";
 import { motion } from "framer-motion";
 
+
 const projectData = [
   {
-    image: "https://images.unsplash.com/photo-1587620498306-444737c15555?auto=format&fit=crop&q=80&w=800",
-    title: "Real-time Chat App",
-    tags: ["React", "FastAPI", "MongoDB", "Socket.io"],
+    image: "/Reddis+kafka.gif",
+    title: "Microservices + Redis — Enterprise Inquire & Manage Platform",
+    tags: [
+      "Java 8/11/17",
+      "Spring Boot",
+      "REST APIs",
+      "Microservices",
+      "Redis",
+      "Azure App Service",
+      "OAuth2/OIDC",
+      "Entra ID",
+      "Async Processing",
+      "Callbacks",
+      "Retry",
+      "Monitoring & Alerting",
+    ],
     link: "#",
     github: "#",
   },
   {
-    image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&q=80&w=800",
-    title: "Food Delivery Platform",
-    tags: ["React", "Node.js", "Express", "MongoDB"],
+    image: "/EDF.gif",
+    title: "EDF — Databricks Enterprise Data Framework",
+    tags: [
+      "Databricks",
+      "PySpark",
+      "Delta Lake",
+      "DLT",
+      "Unity Catalog",
+      "Auto Loader",
+      "Kafka",
+      "Oracle GoldenGate",
+      "SFTP",
+      "REST APIs",
+      "CDC",
+      "SCD Type 1/2",
+      "Medallion Architecture",
+      "SQL",
+      "YAML",
+    ],
     link: "#",
     github: "#",
   },
   {
-    image: "https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80&w=800",
-    title: "Premium E-Commerce",
-    tags: ["React", "Node.js", "Tailwind", "Stripe"],
+    image: "/security.gif",
+    title: "Bug Bounty & Enterprise Security Remediat",
+    tags: [
+      "Java",
+      "Spring Boot",
+      "REST APIs",
+      "OAuth2",
+      "OIDC",
+      "Microsoft Entra ID",
+      "SQL",
+      "WebLogic",
+      "Azure",
+      "Secure Coding",
+      "Vulnerability Remediation",
+    ],
+    link: "#",
+    github: "#",
+  },
+  {
+    image: "/Event-Driven.gif",
+    title: "DMAAP → Kafka/IEBUS Migration",
+    tags: [
+      "Kafka",
+      "IEBUS",
+      "DMAAP",
+      "Java",
+      "Spring Boot",
+      "Event-Driven Architecture",
+      "Retry",
+      "Dead Letter Queues",
+      "Monitoring",
+    ],
+    link: "#",
+    github: "#",
+  },
+  {
+    image: "/enterprise.gif",
+    title: "Global Login → Microsoft Entra ID Migration",
+    tags: [
+      "Microsoft Entra ID",
+      "OAuth2",
+      "OIDC",
+      "Java",
+      "Spring Boot",
+      "REST APIs",
+      "Kafka",
+      "Confluent Cloud",
+      "MECHID",
+      "Enterprise Authentication",
+    ],
+    link: "#",
+    github: "#",
+  },
+  {
+    image: "/DSM.gif",
+    title: "Legacy CORBA → REST / Spring Boot Modernization",
+    tags: [
+      "Java",
+      "Spring Boot",
+      "REST APIs",
+      "Microservices",
+      "CORBA",
+      "DMAAP",
+      "DSAP",
+      "IBM MQ",
+      "Kafka/IEBUS",
+      "OAuth2/OIDC",
+      "Entra ID",
+      "WebLogic",
+      "Azure",
+    ],
     link: "#",
     github: "#",
   },
@@ -28,7 +126,7 @@ const projectData = [
 
 const Portfolio = () => {
   return (
-    <section id="projects" className="bg-[#020202] py-24 px-6 md:px-12 lg:px-24">
+    <section id="portfolio" className="bg-[#020202] py-24 px-6 md:px-12 lg:px-24">
       <div className="max-w-7xl mx-auto text-center mb-20">
         <motion.p 
           initial={{ opacity: 0 }}
@@ -42,7 +140,7 @@ const Portfolio = () => {
           whileInView={{ opacity: 1, y: 0 }}
           className="text-4xl md:text-6xl font-black text-white mb-8 uppercase tracking-tighter"
         >
-          Selected Works<span className="text-blue-500">.</span>
+          Selected Works<span className="text-blue-500"></span>
         </motion.h2>
       </div>
 
@@ -56,11 +154,11 @@ const Portfolio = () => {
             whileHover={{ y: -10 }}
             className="group relative overflow-hidden rounded-[2rem] bg-white/5 border border-white/10"
           >
-            <div className="relative overflow-hidden aspect-[4/3] rounded-[1.5rem] m-2">
+            <div className="relative overflow-hidden aspect-video rounded-[1.5rem] m-2 bg-black">
               <img 
                 src={project.image} 
                 alt={project.title} 
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity" />
             </div>
@@ -74,14 +172,14 @@ const Portfolio = () => {
                   </span>
                 ))}
               </div>
-              <div className="flex gap-4">
+              {/* <div className="flex gap-4">
                 <a href={project.github} target="_blank" rel="noopener noreferrer" aria-label="Github Repository" className="p-3 bg-white/5 text-white rounded-xl hover:bg-blue-600 transition-all border border-white/10">
                   <FiGithub size={20} />
                 </a>
                 <a href={project.link} target="_blank" rel="noopener noreferrer" aria-label="Live Demo" className="p-3 bg-white/5 text-white rounded-xl hover:bg-blue-600 transition-all border border-white/10">
                   <FiExternalLink size={20} />
                 </a>
-              </div>
+              </div> */}
             </div>
           </motion.div>
         ))}
@@ -90,4 +188,4 @@ const Portfolio = () => {
   );
 };
 
-export default Portfolio;
+export default Portfolio; 

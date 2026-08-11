@@ -25,13 +25,10 @@ const FrameScrollAnimation = ({ frameCount = 240 }) => {
   const frameIndex = useTransform(smoothProgress, [0, 0.9], [0, frameCount - 1]);
 
   // 4. Anti-Gravity 3D Effects
-  // Floating motion
   const y = useTransform(smoothProgress, [0, 1], ["0%", "-10%"]);
   const rotateX = useTransform(smoothProgress, [0, 0.5, 1], [0, 15, 0]);
   const rotateY = useTransform(smoothProgress, [0, 0.3, 0.7, 1], [0, -10, 10, 0]);
   const scale = useTransform(smoothProgress, [0, 0.8, 0.95], [1, 1.05, 1.2]);
-  
-  // Depth effect (Z-axis translation)
   const z = useTransform(smoothProgress, [0, 1], [0, 100]);
 
   // Preloading Logic
@@ -41,7 +38,6 @@ const FrameScrollAnimation = ({ frameCount = 240 }) => {
       for (let i = 1; i <= frameCount; i++) {
         const img = new Image();
         const frameNumber = String(i).padStart(3, "0");
-        // Using new URL for Vite asset compatibility
         const imgUrl = new URL(`../assets/image2/ezgif-frame-${frameNumber}.jpg`, import.meta.url).href;
         img.src = imgUrl;
         img.onload = () => {
@@ -70,8 +66,7 @@ const FrameScrollAnimation = ({ frameCount = 240 }) => {
 
       if (img && img.complete) {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        
-        // Responsive cover logic
+
         const canvasAspect = canvas.width / canvas.height;
         const imgAspect = img.width / img.height;
         let drawWidth, drawHeight, offsetX, offsetY;
@@ -101,7 +96,6 @@ const FrameScrollAnimation = ({ frameCount = 240 }) => {
     window.addEventListener("resize", resizeCanvas);
     resizeCanvas();
 
-    // Frame update loop
     const unsubscribe = frameIndex.on("change", render);
 
     return () => {
@@ -114,26 +108,26 @@ const FrameScrollAnimation = ({ frameCount = 240 }) => {
   const opacity = useTransform(smoothProgress, [0.85, 0.95], [1, 0]);
   const blur = useTransform(smoothProgress, [0.85, 0.95], ["blur(0px)", "blur(20px)"]);
 
+  const textOverlayOpacity = useTransform(smoothProgress, [0.1, 0.3, 0.7, 0.9], [0, 1, 1, 0]);
+
   return (
     <div ref={containerRef} className="relative h-[600vh] bg-[#020202]">
       <div className="sticky top-0 left-0 w-full h-screen overflow-hidden flex items-center justify-center perspective-2000">
-        
-        {/* Loading Overlay */}
+
         {!loaded && (
           <div className="absolute inset-0 z-50 flex flex-col items-center justify-center bg-[#020202]">
             <div className="text-blue-500 font-mono text-[10px] uppercase tracking-[0.5em] mb-4">
               Syncing Core Frames... {loadingProgress}%
             </div>
             <div className="w-1/4 h-[1px] bg-white/10 overflow-hidden">
-               <motion.div 
-                 className="h-full bg-blue-500" 
+               <motion.div
+                 className="h-full bg-blue-500"
                  style={{ width: `${loadingProgress}%` }}
                />
             </div>
           </div>
         )}
 
-        {/* The Animated Frame (Full Screen Canvas) */}
         <motion.div
            style={{
              y,
@@ -153,20 +147,25 @@ const FrameScrollAnimation = ({ frameCount = 240 }) => {
           />
         </motion.div>
 
-        {/* Global Cinematic Vibe */}
         <div className="absolute inset-0 pointer-events-none bg-radial-vignette opacity-40" />
       </div>
 
       {/* Transitional Text Overlay */}
-      <motion.div 
-        style={{ opacity: useTransform(smoothProgress, [0.1, 0.3, 0.7, 0.9], [0, 1, 1, 0]) }}
-        className="absolute inset-x-0 top-[50%] -translate-y-1/2 flex flex-col items-center justify-center text-center pointer-events-none z-[60]"
+      <motion.div
+        style={{ opacity: textOverlayOpacity }}
+        className="absolute inset-x-0 top-[50%] -translate-y-1/2 flex flex-col items-center justify-center text-center pointer-events-none z-[60] px-6 max-w-4xl mx-auto"
       >
-        <h3 className="text-white text-4xl md:text-8xl font-black uppercase tracking-tighter mb-2 drop-shadow-2xl">
-          Welcome to my <span className="text-blue-500">Portfolio</span>
+        <h3 className="text-white text-3xl md:text-5xl font-black uppercase tracking-tighter drop-shadow-2xl leading-[1.15]">
+          Welcome to the place
+          <br />
+          where I build systems
+          <br />
+          that don't wake anyone at{" "}
+          <span className="text-blue-500">3 AM</span>.
         </h3>
-        <p className="text-blue-400 font-mono tracking-[0.6em] uppercase text-[12px] opacity-70">
-          Core System Interface
+
+        <p className="text-white/50 text-sm md:text-base font-mono uppercase tracking-[0.25em] mt-6">
+          Senior Software Engineer · Full Stack · Data & Distributed Systems
         </p>
       </motion.div>
     </div>

@@ -97,10 +97,10 @@ export default function Services() {
       {/* Header */}
       <div ref={headerRef} className="max-w-7xl mx-auto text-center mb-24 relative z-10">
         <div className="inline-block px-3 py-1 border border-blue-500/30 bg-blue-500/5 rounded-sm mb-4">
-          <p className="text-blue-400 font-mono text-[10px] uppercase tracking-[0.5em]">SERVICES MODULE</p>
+          {/* <p className="text-blue-400 font-mono text-[10px] uppercase tracking-[0.5em]">EXPERIENCE MODULE</p> */}
         </div>
         <h2 className="text-4xl md:text-6xl font-black tracking-tighter uppercase mb-6">
-          My Services<span className="text-blue-500">.</span>
+          Experience<span className="text-blue-500">.</span>
         </h2>
         <div className="w-24 h-[1px] bg-blue-500/40 mx-auto mb-8"></div>
         <p className="max-w-3xl mx-auto text-gray-500 font-light text-base leading-relaxed">
@@ -108,95 +108,150 @@ export default function Services() {
         </p>
       </div>
 
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-start relative z-10">
-        
-        {/* Main Services Grid */}
-        <div ref={gridRef} className="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-6">
-          {mainServices.map((service) => (
-            <div
-              key={service.title}
-              className="service-card group p-10 bg-[#0a0a0a] border border-white/[0.05] hover:border-blue-500/30 hover:shadow-[0_0_30px_rgba(59,130,246,0.05)] transition-all duration-300 rounded-sm cursor-default flex flex-col items-start"
-            >
-              <div className="mb-8 p-4 bg-white/5 border border-white/10 rounded-sm text-gray-300 group-hover:text-blue-400 group-hover:border-blue-500/20 transition-all">
-                {service.icon}
-              </div>
-              <h3 className="text-xl font-bold text-white mb-3 tracking-tight uppercase">{service.title}</h3>
-              <p className="text-gray-500 font-light text-sm leading-relaxed mb-10">
-                {service.p}
-              </p>
-              <button className="flex items-center gap-3 text-[10px] font-mono uppercase tracking-[0.3em] text-gray-400 hover:text-white group/btn transition-colors">
-                <span>View Details</span> 
-                <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
-              </button>
-            </div>
-          ))}
-        </div>
-
-        {/* Featured Experience Card (Sidebar) */}
-        <div ref={sidebarRef} className="lg:col-span-4 h-full relative">
-          <div className="sticky top-32 p-10 bg-[#0c0c0c] border border-white/[0.08] rounded-sm group overflow-hidden">
-            
-            {/* HUD Corner Lines */}
-            <div className="corner-line absolute top-2 left-2 w-4 h-4 border-t border-l border-blue-500/50"></div>
-            <div className="corner-line absolute top-2 right-2 w-4 h-4 border-t border-r border-blue-500/50"></div>
-            <div className="corner-line absolute bottom-2 left-2 w-4 h-4 border-b border-l border-blue-500/50"></div>
-            <div className="corner-line absolute bottom-2 right-2 w-4 h-4 border-b border-r border-blue-500/50"></div>
-
-            <div className="absolute -top-12 -right-12 w-48 h-48 bg-blue-500/5 blur-[80px] group-hover:bg-blue-500/10 transition-all duration-1000" />
-            
-            <div className="relative z-10 flex flex-col h-full">
-              <div className="flex items-center gap-4 mb-12">
-                <div className="p-3 bg-blue-500/10 border border-blue-500/20 rounded-sm text-blue-400">
-                  <FiBriefcase size={22} />
+      <div className="flex gap-10">
+        <div className="max-w-7xl mx-auto grid gap-10 items-start relative z-10">
+          
+          {/* Main Services Grid */}
+          {/* <div ref={gridRef} className="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+            {mainServices.map((service) => (
+              <div
+                key={service.title}
+                className="service-card group p-10 bg-[#0a0a0a] border border-white/[0.05] hover:border-blue-500/30 hover:shadow-[0_0_30px_rgba(59,130,246,0.05)] transition-all duration-300 rounded-sm cursor-default flex flex-col items-start"
+              >
+                <div className="mb-8 p-4 bg-white/5 border border-white/10 rounded-sm text-gray-300 group-hover:text-blue-400 group-hover:border-blue-500/20 transition-all">
+                  {service.icon}
                 </div>
-                <div>
-                  <h3 className="text-lg font-bold tracking-widest uppercase">Experience</h3>
-                  <span className="text-[8px] font-mono text-gray-600 block tracking-[0.4em] mt-1">MODULE ACTIVE</span>
-                </div>
-              </div>
-
-              <div className="flex gap-4 mb-8">
-                <div className="h-10 px-3 bg-white flex items-center justify-center rounded-sm">
-                   <span className="text-black font-black text-[10px] tracking-tighter">AGROGANAM</span>
-                </div>
-                <div className="h-10 px-3 border border-white/20 flex items-center justify-center rounded-sm">
-                   <span className="text-white font-bold text-[10px] tracking-widest">INCUBATION</span>
-                </div>
-              </div>
-
-              <p className="text-gray-400 font-light text-sm leading-relaxed mb-12">
-                Completed a 6-month internship at <span className="text-white font-medium">Agroganam Technologies</span>, 
-                delivering production-level apps and collaborating on real-time incubation center projects.
-              </p>
-
-              <div className="mt-auto space-y-6">
-                <div className="relative overflow-hidden rounded-sm group/img h-40">
-                  <div className="absolute inset-0 bg-blue-500/5 z-10 mix-blend-overlay"></div>
-                  <img 
-                    className="w-full h-full object-cover opacity-60 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 scale-100 group-hover:scale-105" 
-                    src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800" 
-                    alt="Work Showcase" 
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
-                  <div className="absolute bottom-4 left-4 font-mono text-[8px] text-gray-500 tracking-widest">SYSTEM_IMAGE_01</div>
-                </div>
-                
-                <button 
-                  className="w-full py-4 border border-white/10 text-white font-mono text-[10px] uppercase tracking-[0.3em] hover:bg-white hover:text-black transition-all duration-300 rounded-sm"
-                >
-                  View Case Study
+                <h3 className="text-xl font-bold text-white mb-3 tracking-tight uppercase">{service.title}</h3>
+                <p className="text-gray-500 font-light text-sm leading-relaxed mb-10">
+                  {service.p}
+                </p>
+                <button className="flex items-center gap-3 text-[10px] font-mono uppercase tracking-[0.3em] text-gray-400 hover:text-white group/btn transition-colors">
+                  <span>View Details</span> 
+                  <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
                 </button>
               </div>
-            </div>
-          </div>
+            ))}
+          </div> */}
 
-          {/* Micro HUD Footer */}
-          <div className="mt-6 flex justify-between items-center font-mono text-[9px] text-gray-700 tracking-[0.2em] px-2 opacity-50">
-            <span>&gt; SYSTEM DATA LOADED</span>
-            <span>0x034FB</span>
+          {/* Featured Experience Card (Sidebar) */}
+          <div ref={sidebarRef} className="lg:col-span-4 h-full relative">
+            <div className="sticky top-32 p-10 bg-[#0c0c0c] border border-white/[0.08] rounded-sm group overflow-hidden">
+              
+              {/* HUD Corner Lines */}
+              <div className="corner-line absolute top-2 left-2 w-4 h-4 border-t border-l border-blue-500/50"></div>
+              <div className="corner-line absolute top-2 right-2 w-4 h-4 border-t border-r border-blue-500/50"></div>
+              <div className="corner-line absolute bottom-2 left-2 w-4 h-4 border-b border-l border-blue-500/50"></div>
+              <div className="corner-line absolute bottom-2 right-2 w-4 h-4 border-b border-r border-blue-500/50"></div>
+
+              <div className="absolute -top-12 -right-12 w-48 h-48 bg-blue-500/5 blur-[80px] group-hover:bg-blue-500/10 transition-all duration-1000" />
+              
+              <div className="relative z-10 flex flex-col h-full">
+                <div className="flex items-center gap-4 mb-12">
+                  <div className="p-3 bg-blue-500/10 border border-blue-500/20 rounded-sm text-blue-400">
+                    <FiBriefcase size={22} />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold tracking-widest uppercase">AT&T</h3>
+                    <span className="text-[10px] font-mono text-white-600 block tracking-[0.3em] mt-1">Sep 2025 - Present</span>
+                  </div>
+                </div>
+
+                <div className="flex gap-4 mb-8">
+                  <div className="h-10 px-3 bg-white flex items-center justify-center rounded-sm">
+                    <span className="text-black font-black text-[12px] tracking-tighter">Sr.Associate Software Engineer</span>
+                  </div>
+                  {/* <div className="h-10 px-3 border border-white/20 flex items-center justify-center rounded-sm">
+                    <span className="text-white font-bold text-[10px] tracking-widest">INCUBATION</span>
+                  </div> */}
+                </div>
+
+                <p className="text-gray-400 font-light text-sm leading-relaxed mb-12">
+                  Built <span className="text-white font-medium">AT&T's Enterprise Data Framework</span> on Databricks, 
+                  enabling config-driven CDC ingestion across 60+ tables while developing scalable Java/Spring Boot 
+                  microservices with Kafka, Redis, and Azure.
+                </p>
+              </div>
+            </div>
+
+            {/* Micro HUD Footer */}
+            <div className="mt-6 flex justify-between items-center font-mono text-[9px] text-gray-700 tracking-[0.2em] px-2 opacity-50">
+              <span>&gt; SYSTEM DATA LOADED</span>
+              <span>0x034FB</span>
+            </div>
           </div>
         </div>
 
+        <div className="max-w-7xl mx-auto grid gap-10 items-start relative z-10">
+          
+          {/* Main Services Grid */}
+          {/* <div ref={gridRef} className="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+            {mainServices.map((service) => (
+              <div
+                key={service.title}
+                className="service-card group p-10 bg-[#0a0a0a] border border-white/[0.05] hover:border-blue-500/30 hover:shadow-[0_0_30px_rgba(59,130,246,0.05)] transition-all duration-300 rounded-sm cursor-default flex flex-col items-start"
+              >
+                <div className="mb-8 p-4 bg-white/5 border border-white/10 rounded-sm text-gray-300 group-hover:text-blue-400 group-hover:border-blue-500/20 transition-all">
+                  {service.icon}
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3 tracking-tight uppercase">{service.title}</h3>
+                <p className="text-gray-500 font-light text-sm leading-relaxed mb-10">
+                  {service.p}
+                </p>
+                <button className="flex items-center gap-3 text-[10px] font-mono uppercase tracking-[0.3em] text-gray-400 hover:text-white group/btn transition-colors">
+                  <span>View Details</span> 
+                  <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
+                </button>
+              </div>
+            ))}
+          </div> */}
+
+          {/* Featured Experience Card (Sidebar) */}
+          <div ref={sidebarRef} className="lg:col-span-4 h-full relative">
+            <div className="sticky top-32 p-10 bg-[#0c0c0c] border border-white/[0.08] rounded-sm group overflow-hidden">
+              
+              {/* HUD Corner Lines */}
+              <div className="corner-line absolute top-2 left-2 w-4 h-4 border-t border-l border-blue-500/50"></div>
+              <div className="corner-line absolute top-2 right-2 w-4 h-4 border-t border-r border-blue-500/50"></div>
+              <div className="corner-line absolute bottom-2 left-2 w-4 h-4 border-b border-l border-blue-500/50"></div>
+              <div className="corner-line absolute bottom-2 right-2 w-4 h-4 border-b border-r border-blue-500/50"></div>
+
+              <div className="absolute -top-12 -right-12 w-48 h-48 bg-blue-500/5 blur-[80px] group-hover:bg-blue-500/10 transition-all duration-1000" />
+              
+              <div className="relative z-10 flex flex-col h-full">
+                <div className="flex items-center gap-4 mb-12">
+                  <div className="p-3 bg-blue-500/10 border border-blue-500/20 rounded-sm text-blue-400">
+                    <FiBriefcase size={22} />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold tracking-widest uppercase">IBM</h3>
+                    <span className="text-[10px] font-mono text-white-600 block tracking-[0.3em] mt-1">JUN 2021 - AUG 2025</span>
+                  </div>
+                </div>
+
+                <div className="flex gap-4 mb-8">
+                  <div className="h-10 px-3 bg-white flex items-center justify-center rounded-sm">
+                    <span className="text-black font-black text-[12px] tracking-tighter">Cloud Full Stack Developer</span>
+                  </div>
+                  {/* <div className="h-10 px-3 border border-white/20 flex items-center justify-center rounded-sm">
+                    <span className="text-white font-bold text-[10px] tracking-widest">INCUBATION</span>
+                  </div> */}
+                </div>
+
+                <p className="text-gray-400 font-light text-sm leading-relaxed mb-12">
+                  Designed and delivered scalable full-stack and cloud-native applications using{" "}
+                  <span className="text-white font-medium">Java, Spring Boot, Angular, Kafka, REST APIs, and Azure</span>, 
+                  with a focus on microservices, performance, and enterprise modernization.
+                </p>
+              </div>
+            </div>
+
+            {/* Micro HUD Footer */}
+            <div className="mt-6 flex justify-between items-center font-mono text-[9px] text-gray-700 tracking-[0.2em] px-2 opacity-50">
+              <span>&gt; SYSTEM DATA LOADED</span>
+              <span>0x034FB</span>
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* Grid Lines Overlay */}

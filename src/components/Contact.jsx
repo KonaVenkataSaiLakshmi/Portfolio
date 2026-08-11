@@ -111,16 +111,17 @@ const Contact = () => {
     e.preventDefault();
     emailjs
       .sendForm(
-        "service_ezep6zg",
-        "template_6fbergt",
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         formRef.current,
-        "0GSfZwE2fSCw9lqcZ"
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       )
       .then(() => {
         toast.success("TRANSMISSION_COMPLETE 🚀");
         formRef.current.reset();
       })
       .catch((err) => {
+        console.log("EmailJS ERROR:", err);
         toast.error("CONNECTION_FAILURE ❌");
       });
   };
@@ -128,7 +129,7 @@ const Contact = () => {
   return (
     <div
       ref={containerRef}
-      id="contactme"
+      id="contact"
       className="relative w-full h-screen bg-[#020202] overflow-hidden flex items-center justify-center font-mono select-none"
     >
       {/* 1. Loading Module (Ultra-high Z) */}
@@ -169,17 +170,6 @@ const Contact = () => {
             animate={{ opacity: 1 }}
             className="absolute inset-0 z-20 pointer-events-none p-10"
           >
-            {/* Top-left animated text */}
-            <div className="absolute top-12 left-12">
-              <motion.div 
-                animate={{ opacity: [0.3, 1, 0.3] }}
-                transition={{ duration: 2, repeat: Infinity }}
-                className="text-cyan-400 font-mono text-[9px] uppercase tracking-[0.7em] font-bold"
-              >
-                Establish Sub-Space Connection
-              </motion.div>
-            </div>
-
             {/* Brackets */}
             <div className="absolute top-10 left-10 w-24 h-24 border-t border-l border-cyan-500/20" />
             <div className="absolute top-10 right-10 w-24 h-24 border-t border-r border-cyan-500/20" />
@@ -190,11 +180,6 @@ const Contact = () => {
             <div className="absolute top-12 left-12 flex items-center space-x-3">
                <FiActivity className="text-cyan-400 text-xs animate-pulse" />
                <span className="text-cyan-400/40 text-[9px] tracking-[0.4em] uppercase font-bold">Signal_Stable</span>
-            </div>
-            
-            <div className="absolute bottom-12 right-12 text-right hidden lg:block">
-               <span className="text-white/10 text-[9px] tracking-[0.6em] uppercase block mb-1">Archive_003</span>
-               <span className="text-cyan-500/30 text-[9px] tracking-[0.4em] uppercase">&gt; System_Ready</span>
             </div>
           </motion.div>
         )}
@@ -212,49 +197,45 @@ const Contact = () => {
           >
             <div className="text-center mb-8">
               <h2 className="text-6xl md:text-9xl font-black text-white uppercase tracking-tighter leading-none">
-              COMM<span className="text-cyan-500 block sm:inline">.LINK</span>
+              Get in<span className="text-cyan-500 block sm:inline"> Touch</span>
             </h2>
-              <div className="flex items-center justify-center space-x-2 text-cyan-500/60 font-mono text-[9px] tracking-[0.6em] uppercase">
-                <FiShield />
-                <span>Protocol: Neural_Gate</span>
-              </div>
             </div>
 
             <form
               ref={formRef}
               onSubmit={sendEmail}
-              className="bg-white/[0.03] backdrop-blur-md border border-white/10 p-10 md:p-14 rounded-none shadow-[0_20px_50px_rgba(0,0,0,0.5)] space-y-10 group"
+              className="bg-black/40 backdrop-blur-md border border-white/30 p-10 md:p-14 rounded-none shadow-[0_20px_50px_rgba(0,0,0,0.5)] space-y-10 group"
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                 <div className="space-y-3">
-                  <label className="text-[9px] font-mono font-bold uppercase tracking-[0.3em] text-cyan-500/50 block ml-1">IDENT_SIGNATURE</label>
+                  <label className="text-[9px] font-mono font-bold uppercase tracking-[0.3em] text-cyan-500 block ml-1">NAME</label>
                   <input
                     name="name"
                     type="text"
-                    placeholder="ENTER_NAME"
+                    placeholder="ENTER NAME"
                     required
-                    className="w-full bg-white/5 border-b border-white/10 py-5 px-6 text-white text-[11px] outline-none focus:border-cyan-600 transition-all placeholder:text-cyan-950/20"
+                    className="w-full bg-white/5 border-b border-white/30 py-5 px-6 text-white text-[13px] outline-none focus:border-cyan-600 transition-all placeholder:text-white-500/40"
                   />
                 </div>
                 <div className="space-y-3">
-                  <label className="text-[9px] font-mono font-bold uppercase tracking-[0.3em] text-cyan-500/50 block ml-1">COMM_PATH_ADDR</label>
+                  <label className="text-[9px] font-mono font-bold uppercase tracking-[0.3em] text-cyan-500 block ml-1">EMAIL</label>
                   <input
                     name="email"
                     type="email"
-                    placeholder="ENTER_EMAIL"
+                    placeholder="ENTER EMAIL"
                     required
-                    className="w-full bg-white/5 border-b border-white/10 py-5 px-6 text-white text-[11px] outline-none focus:border-cyan-600 transition-all placeholder:text-cyan-950/20"
+                    className="w-full bg-white/5 border-b border-white/30 py-5 px-6 text-white text-[13px] outline-none focus:border-cyan-600 transition-all placeholder:text-white-500/40"
                   />
                 </div>
               </div>
 
               <div className="space-y-3">
-                <label className="text-[9px] font-mono font-bold uppercase tracking-[0.3em] text-cyan-500/50 block ml-1">DATA_PAYLOAD</label>
+                <label className="text-[9px] font-mono font-bold uppercase tracking-[0.3em] text-cyan-500 block ml-1">MESSAGE</label>
                 <textarea
                   name="message"
-                  placeholder="INPUT_TRANSMISSION..."
+                  placeholder="ENTER MESSAGE"
                   required
-                  className="w-full bg-white/5 border-b border-white/10 py-5 px-6 text-white text-[11px] outline-none focus:border-cyan-600 transition-all min-h-[140px] resize-none placeholder:text-cyan-950/20"
+                  className="w-full bg-white/5 border-b border-white/30 py-5 px-6 text-white text-[13px] outline-none focus:border-cyan-600 transition-all min-h-[140px] resize-none placeholder:text-white-500/40"
                 />
               </div>
 
@@ -265,7 +246,7 @@ const Contact = () => {
                 type="submit"
                 className="group flex items-center space-x-6 bg-cyan-600 text-black font-black text-[11px] uppercase tracking-[0.6em] px-24 py-6 shadow-2xl transition-all"
               >
-                <span>TRANSMIT</span>
+                <span>SEND</span>
                 <FiSend className="text-lg transition-transform group-hover:translate-x-1" />
               </motion.button>
               </div>

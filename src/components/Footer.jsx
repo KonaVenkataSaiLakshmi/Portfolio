@@ -32,10 +32,10 @@ const Footer = () => {
   }, []);
 
   const socialLinks = [
-    { icon: <FiGithub />, label: 'GITHUB', url: '#', color: 'hover:text-red-500' },
-    { icon: <FiTwitter />, label: 'TWITTER', url: '#', color: 'hover:text-cyan-400' },
-    { icon: <FiLinkedin />, label: 'LINKEDIN', url: '#', color: 'hover:text-blue-500' },
-    { icon: <FiInstagram />, label: 'INSTAGRAM', url: '#', color: 'hover:text-violet-500' },
+    { icon: <FiGithub />, label: 'GITHUB', url: 'https://github.com/kona-venkata-sai-lakshmi', color: 'hover:text-red-500' },
+    { icon: <FiTwitter />, label: 'TWITTER', url: 'https://x.com/KONAVENKATASAI3', color: 'hover:text-cyan-400' },
+    { icon: <FiLinkedin />, label: 'LINKEDIN', url: 'https://www.linkedin.com/in/kona-venkata-sai-lakshmi', color: 'hover:text-blue-500' },
+    { icon: <FiInstagram />, label: 'INSTAGRAM', url: 'https://www.instagram.com/decode_kvsl', color: 'hover:text-violet-500' },
   ];
 
   return (
@@ -79,11 +79,11 @@ const Footer = () => {
             className="space-y-6"
           >
             <div className="flex items-center space-x-3 group cursor-pointer">
-              <div className="w-10 h-10 bg-cyan-600/10 border border-cyan-500/20 rounded-lg flex items-center justify-center group-hover:bg-cyan-600 group-hover:border-cyan-500 transition-all duration-500">
+              {/* <div className="w-10 h-10 bg-cyan-600/10 border border-cyan-500/20 rounded-lg flex items-center justify-center group-hover:bg-cyan-600 group-hover:border-cyan-500 transition-all duration-500">
                 <FiCpu className="text-cyan-500 text-xl group-hover:text-white transition-colors" />
-              </div>
+              </div> */}
               <h3 className="text-2xl font-black text-white tracking-tighter uppercase italic">
-                LEESH<span className="text-cyan-600">ARK</span>
+                K V<span className="text-cyan-600">S L</span>
               </h3>
             </div>
             <p className="text-gray-500 text-xs leading-relaxed uppercase tracking-widest font-light">
@@ -103,7 +103,7 @@ const Footer = () => {
             transition={{ delay: 0.1 }}
             className="space-y-6"
           >
-            <h4 className="text-[11px] font-mono font-bold text-cyan-500/80 tracking-[0.4em] uppercase">Control_Center</h4>
+            {/* <h4 className="text-[11px] font-mono font-bold text-cyan-500/80 tracking-[0.4em] uppercase">Control_Center</h4> */}
             <ul className="space-y-4">
               {['About', 'Portfolio', 'Experience', 'Lab'].map((item) => (
                 <li key={item}>
@@ -152,7 +152,7 @@ const Footer = () => {
             transition={{ delay: 0.3 }}
             className="space-y-6"
           >
-            <h4 className="text-[11px] font-mono font-bold text-cyan-500/80 tracking-[0.4em] uppercase">Broadcast_Link</h4>
+            <h4 className="text-[11px] font-mono font-bold text-cyan-500/80 tracking-[0.4em] uppercase">Links</h4>
             <div className="flex space-x-4">
               {socialLinks.map((social) => (
                 <motion.a
@@ -172,7 +172,7 @@ const Footer = () => {
                 </motion.a>
               ))}
             </div>
-            <motion.button
+            {/* <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               className="w-full py-4 bg-gradient-to-r from-cyan-600 to-blue-800 text-black font-black text-[10px] uppercase tracking-[0.5em] rounded-xl shadow-[0_10px_30px_rgba(6,182,212,0.2)] flex items-center justify-center space-x-3 group overflow-hidden relative"
@@ -180,30 +180,16 @@ const Footer = () => {
               <div className="absolute top-0 -left-[100%] w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:left-[100%] transition-all duration-1000" />
               <span>Initiate Transmission</span>
               <FiArrowUpRight className="text-lg group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-            </motion.button>
+            </motion.button> */}
           </motion.div>
         </div>
 
         {/* --- BOTTOM SECTION --- */}
         <div className="mt-24 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="flex items-center space-x-6">
-            <div className="text-[10px] text-gray-600 tracking-[0.3em] font-mono flex items-center">
-              <span className="w-1.5 h-1.5 bg-cyan-600 rounded-full mr-2"></span>
-              POWERED BY AI SYSTEMS v3.4.1
-            </div>
-            <div className="hidden md:block w-[1px] h-3 bg-white/10"></div>
-            <div className="text-[10px] text-gray-600 tracking-[0.3em] font-mono uppercase">
-              Est. 2024 // Archive_001
-            </div>
-          </div>
-
           <div className="flex flex-col items-center md:items-end">
              <div className="text-[10px] text-gray-500 tracking-[0.4em] font-mono uppercase mb-1">
                 Local_Time: {systemTime}
              </div>
-             <p className="text-[9px] text-gray-700 tracking-[0.2em] font-mono uppercase">
-                &copy; LEESHARK. ALL NEURAL LINKS RESERVED.
-             </p>
           </div>
         </div>
       </div>

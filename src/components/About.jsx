@@ -1,42 +1,50 @@
 import React from 'react';
-import { FiAward, FiBookOpen, FiCode, FiDownload } from "react-icons/fi";
 import { 
-  SiReact, 
-  SiTailwindcss, 
-  SiMongodb, 
-  SiFastapi, 
-  SiGit 
-} from "react-icons/si";
+  FiAward, FiBookOpen, FiCode, FiDownload, 
+  FiBox, FiGrid, FiTarget, FiActivity, FiCloud, FiZap, 
+  FiDatabase, FiGlobe, FiShare2, FiServer, FiTriangle, 
+  FiHardDrive, FiPackage, FiGitBranch 
+} from "react-icons/fi";
 
 export default function About() {
   const Aboutdata = [
     {
       icon: <FiCode size={20} />,
       title: "Languages",
-      desc: "HTML, CSS, JS, React, FastAPI, MongoDB",
+      desc: "Java, Python, SQL, JavaScript, Bash, YAML",
     },
     {
       icon: <FiBookOpen size={20} />,
       title: "Education",
-      desc: "B.E Computer Science",
+      desc: "B.Tech in Computer Science & Engineering",
     },
     {
       icon: <FiAward size={20} />,
       title: "Projects",
-      desc: "Built 5+ modern web projects",
+      desc: "Built enterprise-grade data platforms, microservices & backend applications",
     },
   ];
 
   const Tools = [
-    { icon: <SiReact size={24} />, title: "React js" },
-    { icon: <SiTailwindcss size={24} />, title: "Tailwind css" },
-    { icon: <SiMongodb size={24} />, title: "MongoDB" },
-    { icon: <SiFastapi size={24} />, title: "FastAPI" },
-    { icon: <SiGit size={24} />, title: "Git" },
+    { icon: <FiCode size={24} />, title: "Java" },
+    { icon: <FiBox size={24} />, title: "Spring Boot" },
+    { icon: <FiGrid size={24} />, title: "Microservices" },
+    { icon: <FiTarget size={24} />, title: "System Design" },
+    { icon: <FiActivity size={24} />, title: "Apache Kafka" },
+    { icon: <FiCloud size={24} />, title: "Databricks" },
+    { icon: <FiZap size={24} />, title: "PySpark" },
+    { icon: <FiDatabase size={24} />, title: "Data Engineering" },
+    { icon: <FiGlobe size={24} />, title: "REST APIs" },
+    { icon: <FiShare2 size={24} />, title: "Distributed Systems" },
+    { icon: <FiServer size={24} />, title: "Azure Cloud" },
+    { icon: <FiTriangle size={24} />, title: "Angular" },
+    { icon: <FiHardDrive size={24} />, title: "Redis" },
+    { icon: <FiPackage size={24} />, title: "Docker & Kubernetes" },
+    { icon: <FiGitBranch size={24} />, title: "CI/CD & DevOps" },
   ];
-
+  
   return (
-    <div id="about" className="relative w-full min-h-screen bg-[#020202] overflow-hidden flex items-center justify-center font-sans tracking-wide py-20 px-6 md:px-12">
+    <div id="about" className="relative w-full min-h-screen bg-[#020202] overflow-hidden flex items-center justify-end font-sans tracking-wide py-20 px-6 md:px-12">
         
         {/* --- BG EFFECTS --- */}
         <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)', backgroundSize: '50px 50px' }}></div>
@@ -61,7 +69,7 @@ export default function About() {
             <div className="w-full lg:w-[65%] flex flex-col space-y-10 pointer-events-auto bg-black/40 backdrop-blur-sm p-8 md:p-12 border border-white/5 rounded-2xl">
                 {/* Header */}
                 <div className="space-y-2">
-                    <p className="text-blue-500 font-mono text-[10px] uppercase tracking-[0.5em]">SYSTEM INFO</p>
+                    {/* <p className="text-blue-500 font-mono text-[10px] uppercase tracking-[0.5em]">SYSTEM INFO</p> */}
                     <h2 className="text-4xl md:text-5xl lg:text-7xl font-black text-white tracking-tighter uppercase">
                         About Me<span className="text-blue-500">.</span>
                     </h2>
@@ -70,9 +78,16 @@ export default function About() {
                 {/* Bio Paragraph */}
                 <div className="robotic-section">
                     <p className="text-gray-400 text-sm md:text-md lg:text-xl font-light leading-relaxed max-w-2xl">
-                        I am a passionate <span className="text-white font-medium">Full Stack Web Developer</span> specializing in the 
-                        modern web ecosystem. My expertise lies in crafting high-performance, 
-                        scalable applications with precision and clean architecture.
+                        <span className="text-white font-medium">Senior Full Stack Software Engineer</span> with 5+ years 
+                        of experience building scalable enterprise applications, distributed systems, and modern data 
+                        platforms. I specialize in <span className="text-white font-medium">Java, Spring Boot, Microservices, 
+                        Kafka, Databricks, Azure, and Angular</span>.
+                    </p>
+                    <p className="text-gray-400 text-sm md:text-md lg:text-xl font-light leading-relaxed max-w-2xl mt-6">
+                        My experience spans legacy modernization and cloud-native development, including migrating 
+                        enterprise DSM services from CORBA-based architectures to Spring Boot and REST APIs, alongside 
+                        building event-driven microservices and CDC-based data platforms. I focus on scalable system 
+                        design, performance, reliability, and delivering production-ready solutions.
                     </p>
                 </div>
 
@@ -109,7 +124,7 @@ export default function About() {
                 {/* CTA */}
                 <div className="pt-6">
                     <a 
-                        href="/resume.pdf" 
+                        href="/Kona Venkata Sai Lakshmi Resume.pdf" 
                         className="inline-flex items-center space-x-6 px-12 py-4 bg-blue-600 text-white font-bold text-xs uppercase tracking-widest hover:bg-blue-700 transition-all duration-300 rounded-full shadow-lg shadow-blue-900/20"
                     >
                         <span>Download Resume</span>
