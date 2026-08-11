@@ -124,7 +124,7 @@ export default function About() {
                 {/* CTA */}
                 <div className="pt-6">
                     <a 
-                        href="/Kona Venkata Sai Lakshmi Resume.pdf" 
+                        href={`${import.meta.env.BASE_URL}/Kona Venkata Sai Lakshmi Resume.pdf`} 
                         className="inline-flex items-center space-x-6 px-12 py-4 bg-blue-600 text-white font-bold text-xs uppercase tracking-widest hover:bg-blue-700 transition-all duration-300 rounded-full shadow-lg shadow-blue-900/20"
                     >
                         <span>Download Resume</span>
