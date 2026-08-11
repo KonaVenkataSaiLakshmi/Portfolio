@@ -229,7 +229,7 @@ export default function Hero() {
                                 transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
                                 className="relative inline-block"
                             >
-                                <h2 className="text-sm md:text-md lg:text-lg font-mono text-cyan-300 tracking-[0.2em] uppercase pb-2">
+                                <h2 className="text-sm md:text-md lg:text-lg font-mono text-cyan-500 tracking-[0.2em] uppercase pb-2">
                                     Senior Full Stack Software Engineer
                                 </h2>
                                 <div className="absolute bottom-0 left-0 w-full h-[1px] bg-white/60"></div>
