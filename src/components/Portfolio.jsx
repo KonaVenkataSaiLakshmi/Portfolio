@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const projectData = [
   {
-    image: "/Reddis+kafka.gif",
+    image: `${import.meta.env.BASE_URL}/Reddis+kafka.gif`,
     title: "Microservices + Redis — Enterprise Inquire & Manage Platform",
     tags: [
       "Java 8/11/17",
@@ -25,7 +25,7 @@ const projectData = [
     github: "#",
   },
   {
-    image: "/EDF.gif",
+    image: `${import.meta.env.BASE_URL}/EDF.gif`,
     title: "EDF — Databricks Enterprise Data Framework",
     tags: [
       "Databricks",
@@ -48,7 +48,7 @@ const projectData = [
     github: "#",
   },
   {
-    image: "/security.gif",
+    image: `${import.meta.env.BASE_URL}/security.gif`,
     title: "Bug Bounty & Enterprise Security Remediat",
     tags: [
       "Java",
@@ -67,7 +67,7 @@ const projectData = [
     github: "#",
   },
   {
-    image: "/Event-Driven.gif",
+    image: `${import.meta.env.BASE_URL}/Event-Driven.gif`,
     title: "DMAAP → Kafka/IEBUS Migration",
     tags: [
       "Kafka",
@@ -84,7 +84,7 @@ const projectData = [
     github: "#",
   },
   {
-    image: "/enterprise.gif",
+    image: `${import.meta.env.BASE_URL}/enterprise.gif`,
     title: "Global Login → Microsoft Entra ID Migration",
     tags: [
       "Microsoft Entra ID",
@@ -102,7 +102,7 @@ const projectData = [
     github: "#",
   },
   {
-    image: "/DSM.gif",
+    image: `${import.meta.env.BASE_URL}/DSM.gif`,
     title: "Legacy CORBA → REST / Spring Boot Modernization",
     tags: [
       "Java",

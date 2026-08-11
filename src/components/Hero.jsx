@@ -19,7 +19,7 @@ export default function Hero() {
   const highlightWrapperRef = useRef(null);
 
   const frameCount = 240;
-  const currentFrame = (index) => `/images/ezgif-frame-${(index + 1).toString().padStart(3, '0')}.jpg`;
+  const currentFrame = (index) => `${import.meta.env.BASE_URL}/images/ezgif-frame-${(index + 1).toString().padStart(3, '0')}.jpg`;
   
   const imagesRef = useRef([]);
   // We use an object to track the frame so GSAP can animate the value smoothly

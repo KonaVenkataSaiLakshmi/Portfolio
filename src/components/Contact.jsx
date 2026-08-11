@@ -22,7 +22,7 @@ const Contact = () => {
   const imagesRef = useRef([]);
   const seqRef = useRef({ frame: 0 });
 
-  const currentFrame = (index) => `/image3/ezgif-frame-${(index + 1).toString().padStart(3, '0')}.jpg`;
+  const currentFrame = (index) => `${import.meta.env.BASE_URL}/image3/ezgif-frame-${(index + 1).toString().padStart(3, '0')}.jpg`;
 
   // 1. Preload Sequence
   useEffect(() => {
