@@ -131,7 +131,7 @@ export default function Services() {
                 </div>
                 <div>
                   <h3 className="text-lg font-bold tracking-widest uppercase">AT&T</h3>
-                  <span className="text-[10px] font-mono text-gray-500 block tracking-[0.3em] mt-1">Sep 2025 - Present</span>
+                  <span className="text-[10px] font-mono text-gray-500 block tracking-[0.3em] mt-1">Sep 2025 - Oct 2026</span>
                 </div>
               </div>
 

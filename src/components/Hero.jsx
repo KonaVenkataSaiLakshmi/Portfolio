@@ -216,7 +216,7 @@ export default function Hero() {
                                 transition={{ duration: 0.8, ease: "easeOut" }}
                                 className="mb-4"
                             >
-                                <h1 className="text-5xl md:text-6xl lg:text-7xl font-sans font-bold text-white tracking-[0.1em] uppercase leading-none" style={{ textShadow: "0 0 20px rgba(255,255,255,0.2)" }}>
+                                <h1 className="text-4xl md:text-5xl lg:text-6xl font-sans font-bold text-white tracking-[0.1em] uppercase leading-none" style={{ textShadow: "0 0 20px rgba(255,255,255,0.2)" }}>
                                     {titleText}
                                 </h1>
                             </motion.div>
@@ -229,8 +229,8 @@ export default function Hero() {
                                 transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
                                 className="relative inline-block"
                             >
-                                <h2 className="text-sm md:text-md lg:text-lg font-mono text-gray-300 tracking-[0.2em] uppercase pb-2">
-                                    Full Stack Developer
+                                <h2 className="text-sm md:text-md lg:text-lg font-mono text-cyan-300 tracking-[0.2em] uppercase pb-2">
+                                    Senior Full Stack Software Engineer
                                 </h2>
                                 <div className="absolute bottom-0 left-0 w-full h-[1px] bg-white/60"></div>
                             </motion.div>
@@ -246,7 +246,7 @@ export default function Hero() {
                                 transition={{ duration: 0.8, ease: "easeOut" }}
                                 className="mb-8"
                             >
-                                <p className="text-gray-400 text-sm md:text-sm lg:text-base font-light tracking-wide leading-relaxed">
+                                <p className="text-white-400 text-sm md:text-sm lg:text-base font-light tracking-wide leading-relaxed">
                                     Engineering scalable cloud-native applications, distributed systems, and data platforms for modern enterprise technology.
                                 </p>
                             </motion.div>
