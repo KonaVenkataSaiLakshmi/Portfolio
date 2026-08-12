@@ -125,7 +125,7 @@ const projectData = [
   },
 ];
 
-const Portfolio = () => {
+const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
 
   // Close on Escape key
@@ -146,7 +146,7 @@ const Portfolio = () => {
   }, [selectedProject]);
 
   return (
-    <section id="portfolio" className="bg-[#020202] py-24 px-6 md:px-12 lg:px-24">
+    <section id="projects" className="bg-[#020202] py-24 px-6 md:px-12 lg:px-24">
       <div className="max-w-7xl mx-auto text-center mb-20">
         <motion.p 
           initial={{ opacity: 0 }}
@@ -276,4 +276,4 @@ const Portfolio = () => {
   );
 };
 
-export default Portfolio;
+export default Projects;

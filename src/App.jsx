@@ -5,7 +5,7 @@ import Navbar from './components/Navbar';
 // Lazy load non-critical sections for performance
 const About = lazy(() => import('./components/About'));
 const Services = lazy(() => import('./components/Services'));
-const Portfolio = lazy(() => import('./components/Portfolio'));
+const Projects = lazy(() => import('./components/Projects'));
 const FrameScrollAnimation = lazy(() => import('./components/FrameScrollAnimation'));
 const Contact = lazy(() => import('./components/Contact'));
 const Footer = lazy(() => import('./components/Footer'));
@@ -20,7 +20,7 @@ function App() {
         {/* Welcome to Portfolio Section */}
         <FrameScrollAnimation frameCount={240} />
         <About />
-        <Portfolio />
+        <Projects />
         <Services />
         <Contact />
         <Footer />
