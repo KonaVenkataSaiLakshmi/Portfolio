@@ -98,15 +98,13 @@ export default function About() {
           {/* Bio Paragraph */}
           <div className="robotic-section">
             <p className="text-gray-400 text-sm md:text-md lg:text-xl font-light leading-relaxed max-w-2xl">
-              <span className="text-white font-medium">Senior Full Stack Software Engineer</span> with 5+ years of
-              experience building scalable enterprise applications, distributed systems, and modern data platforms. I
-              specialize in <span className="text-white font-medium">Java, Spring Boot, Microservices, Kafka, Databricks, Cloud, and Angular</span>.
-            </p>
-            <p className="text-gray-400 text-sm md:text-md lg:text-xl font-light leading-relaxed max-w-2xl mt-6">
-              My experience spans legacy modernization and cloud-native development, including migrating enterprise DSM
-              services from CORBA-based architectures to Spring Boot and REST APIs, alongside building event-driven
-              microservices and CDC-based data platforms. I focus on scalable system design, performance, reliability,
-              and delivering production-ready solutions.
+              <span className="text-white font-medium">Senior Software Engineer</span> building scalable enterprise
+              applications, distributed systems, and modern data platforms. I specialize in{" "}
+              <span className="text-white font-medium">Java, Spring Boot, Microservices, Kafka, Databricks, and Azure</span>.
+              My experience spans cloud native development, legacy modernization, and data engineering, from modernizing
+              enterprise services off CORBA based architectures to Spring Boot and REST APIs, to building event driven
+              microservices and secure identity systems. I focus on scalable system design, performance, and production
+              ready solutions.
             </p>
           </div>
 

@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const projectData = [
   {
     image: `${import.meta.env.BASE_URL}/Reddis+kafka.gif`,
-    title: "Microservices + Redis — Enterprise Inquire & Manage Platform",
+    title: "Microservices and Redis for Enterprise Inquire and Manage Platform",
     tags: [
       "Java 8/11/17",
       "Spring Boot",
@@ -27,7 +27,7 @@ const projectData = [
   },
   {
     image: `${import.meta.env.BASE_URL}/EDF.gif`,
-    title: "EDF — Databricks Enterprise Data Framework",
+    title: "Enterprise Data Framework on Databricks",
     tags: [
       "Databricks",
       "PySpark",
@@ -50,7 +50,7 @@ const projectData = [
   },
   {
     image: `${import.meta.env.BASE_URL}/security.gif`,
-    title: "Bug Bounty & Enterprise Security Remediat",
+    title: "Bug Bounty and Enterprise Security Remediation",
     tags: [
       "Java",
       "Spring Boot",
@@ -69,7 +69,7 @@ const projectData = [
   },
   {
     image: `${import.meta.env.BASE_URL}/Event-Driven.gif`,
-    title: "DMAAP → Kafka/IEBUS Migration",
+    title: "DMAAP to Kafka and IEBUS Migration",
     tags: [
       "Kafka",
       "IEBUS",
@@ -86,7 +86,7 @@ const projectData = [
   },
   {
     image: `${import.meta.env.BASE_URL}/enterprise.gif`,
-    title: "Global Login → Microsoft Entra ID Migration",
+    title: "Global Login to Microsoft Entra ID Migration",
     tags: [
       "Microsoft Entra ID",
       "OAuth2",
@@ -104,7 +104,7 @@ const projectData = [
   },
   {
     image: `${import.meta.env.BASE_URL}/DSM.gif`,
-    title: "Legacy CORBA → REST / Spring Boot Modernization",
+    title: "Legacy CORBA to REST and Spring Boot Modernization",
     tags: [
       "Java",
       "Spring Boot",
