@@ -105,7 +105,7 @@ const Footer = () => {
           >
             {/* <h4 className="text-[11px] font-mono font-bold text-cyan-500/80 tracking-[0.4em] uppercase">Control_Center</h4> */}
             <ul className="space-y-4">
-              {['About', 'Projects', 'Experience', 'Lab'].map((item) => (
+              {['About', 'Projects', 'Experience', 'Contact'].map((item) => (
                 <li key={item}>
                   <a href={`#${item.toLowerCase()}`} className="group flex items-center text-xs text-gray-500 hover:text-white transition-all tracking-widest">
                     <span className="w-0 group-hover:w-4 h-[1px] bg-cyan-500 mr-0 group-hover:mr-3 transition-all duration-300"></span>
